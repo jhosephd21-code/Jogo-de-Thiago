@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fazenda do Thiago – Edição Grande: minigame de fazenda com 26 frutas e verduras, animais, melhorias e conquistas." />
+  <title>Fazenda do Thiago | Edição Grande</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Camadas de ambiente -->
+  <div id="sky" aria-hidden="true"></div>
+  <div class="clouds" aria-hidden="true"><span>☁️</span><span>☁️</span><span>☁️</span></div>
+  <div id="rain" aria-hidden="true"></div>
+
+  <!-- Barra superior -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-ico" aria-hidden="true">🚜</span>
+      <div>
+        <h1 id="farm-name">Fazenda do Thiago</h1>
+        <small>Edição Grande · por Thiago</small>
+      </div>
+      <button type="button" class="icon-btn" id="btn-rename" title="Renomear fazenda" aria-label="Renomear fazenda">✏️</button>
+    </div>
+
+    <div class="stats">
+      <div class="pill" title="Moedas">🪙 <b id="coins">0</b></div>
+      <div class="pill level-pill" title="Nível e experiência">
+        <span>⭐ Nível <b id="level">1</b></span>
+        <span class="rank" id="rank">Iniciante</span>
+        <div class="xpbar"><i id="xp-fill"></i></div>
+        <small id="xp-text">0/50 XP</small>
+      </div>
+      <div class="pill" id="clock" title="Hora do dia">☀️ Dia 1</div>
+    </div>
+
+    <div class="top-actions">
+      <button type="button" class="icon-btn" id="btn-sound" title="Som" aria-label="Ligar ou desligar o som">🔊</button>
+      <button type="button" class="icon-btn" id="btn-save" title="Salvar jogo" aria-label="Salvar jogo">💾</button>
+      <button type="button" class="icon-btn" id="btn-reset" title="Recomeçar do zero" aria-label="Recomeçar do zero">🗑️</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Plantação -->
+    <section class="card farm-card">
+      <div class="farm-head">
+        <h2>Sua plantação</h2>
+        <div class="quick">
+          <button type="button" class="btn small" id="btn-plant-all">🌱 Plantar tudo</button>
+          <button type="button" class="btn small blue" id="btn-water-all">💧 Regar tudo</button>
+          <button type="button" class="btn small alt" id="btn-harvest-all">🧺 Colher tudo</button>
+        </div>
+      </div>
+
+      <div class="grid" id="grid" aria-label="Canteiros da fazenda"></div>
+      <p class="hint">💡 Clique num canteiro vazio para <b>plantar</b>, clique de novo para <b>regar</b> (cresce mais rápido) e colha quando brilhar. Segure o mouse e arraste para fazer vários de uma vez! Terrenos 🔒 podem ser comprados.</p>
+
+      <h3>Sementes</h3>
+      <div class="seeds" id="seeds"></div>
+    </section>
+
+    <!-- Painel lateral -->
+    <aside class="card side">
+      <nav class="tabs" id="tabs">
+        <button type="button" class="tab active" data-tab="orders">📋 Pedidos</button>
+        <button type="button" class="tab" data-tab="barn">📦 Celeiro</button>
+        <button type="button" class="tab" data-tab="animals">🐔 Animais</button>
+        <button type="button" class="tab" data-tab="upgrades">🛠️ Melhorias</button>
+        <button type="button" class="tab" data-tab="achievements">🏆 Conquistas</button>
+        <button type="button" class="tab" data-tab="help">❓ Ajuda</button>
+      </nav>
+      <div id="panel" class="panel"></div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p>🌾 Feito por <b>Thiago</b> · © <span id="year"></span> · Seu progresso é salvo automaticamente no navegador.</p>
+  </footer>
+
+  <div id="toasts" class="toasts" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
